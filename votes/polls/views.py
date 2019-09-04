@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import get_list_or_404, render
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from .models import Question,Choice
 
@@ -11,17 +11,17 @@ def index(request):
     return render(request,'polls/index.html', context)
 
 
-#show specific question and choices 
+#show specific question and choices
 def detail(request, question_id):
     try:
         question = Question.objects.get(pk=question_id)
     except Question.DoesNotExist:
         raise Http404("Question does not exist")
-    return render(request, 'polls/deatil.html', {'question':question})
+    return render(request, 'polls/detail.html', {'question':question})
 
-# Get question and display result 
+# Get question and display result
 def results(request, question_id):
-    question = get_object_404(Question, pk=question_id)
+    question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/results.html', {'question':question})
 
 def vote(request, question_id):
