@@ -1,4 +1,4 @@
 .vscode/
 db.sqlite3
 .adminpass
-votes/db.sqlite3
+db.*
