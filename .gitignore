@@ -4,4 +4,10 @@ db.sqlite3
 db.*
 votes/db.sqlite3
 .venv/
+votes/pages/__pycache__/
+votes/polls/__pycache__/
+votes/polls/migrations/__pycache__/
+votes/votes/__pycache__/
+Pipfile
+Pipfile.lock
 
